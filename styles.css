@@ -1,0 +1,203 @@
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+    --success-color: #2ecc71;
+    --warning-color: #f39c12;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #f0f4f8;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+
+.card-container {
+    background: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+    from { 
+        opacity: 0; 
+        transform: translateY(20px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+.card-header {
+    margin-bottom: 25px;
+}
+
+.card-header h2 {
+    color: var(--primary-color);
+    font-weight: 600;
+    margin: 0;
+    font-size: 2em;
+}
+
+.card-header p {
+    color: #777;
+    margin-top: 5px;
+    font-size: 1em;
+}
+
+.status-info {
+    margin-top: 15px;
+    font-size: 0.9em;
+}
+
+.status-hadir {
+    color: #2ecc71;
+    font-weight: 600;
+}
+
+.status-izin {
+    color: #f39c12;
+    font-weight: 600;
+}
+
+.status-sakit {
+    color: #e74c3c;
+    font-weight: 600;
+}
+
+.status-alpha, 
+.status-belum-absen {
+    color: #7f8c8d;
+    font-weight: 600;
+}
+
+#qrcode {
+    margin: 30px auto;
+    padding: 10px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    display: inline-block;
+    background: #fff;
+}
+
+.info-section {
+    margin: 25px 0;
+    text-align: left;
+}
+
+.info-item {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+.info-item b {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+    text-align: center;
+    border: none;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+    color: #fff;
+}
+
+.btn-outline {
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    background-color: transparent;
+}
+
+.btn-disabled {
+    background-color: #95a5a6 !important;
+    color: white !important;
+    cursor: not-allowed !important;
+}
+
+.btn-disabled:hover {
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+@media print {
+    body * {
+        visibility: hidden;
+    }
+    .card-container, .card-container * {
+        visibility: visible;
+    }
+    .card-container {
+        width: 100%;
+        max-width: 100%;
+        box-shadow: none;
+        padding: 0;
+        margin: 0;
+        border-radius: 0;
+    }
+    .btn, .logout-btn {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .card-container {
+        padding: 25px;
+    }
+    
+    .card-header h2 {
+        font-size: 1.5em;
+    }
+    
+    .action-buttons {
+        flex-direction: column;
+    }
+    
+    .btn {
+        width: 100%;
+    }
+}
